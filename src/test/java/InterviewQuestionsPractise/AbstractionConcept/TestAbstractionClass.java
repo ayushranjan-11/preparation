@@ -14,13 +14,19 @@ public class TestAbstractionClass {
         ab.anotherAbstractMethod();
         ab.concreteMethod();
         /*
-        * Why this example was written because when calling abstract methods via dynamic polymorphism then it was called
-        * as overriden method from the child class.
-        *
-        * Note: AbstractClass or parent class is not able to call method of child class via "ab" because ab is reference of
-        * AbstractClass, though it is creating object with new keyword of AbstractClassInheritor but "ab" is reference
-        * of AbstractClass
-        * */
+         * Why this example was written because when calling abstract methods via dynamic polymorphism then it was called
+         * as overriden method from the child class.
+         *
+         * Note: AbstractClass or parent class is not able to call method of child class via "ab" because ab is reference of
+         * AbstractClass, though it is creating object with new keyword of AbstractClassInheritor but "ab" is reference
+         * of AbstractClass
+         * */
+
+
+        //Interface class object assign and calling the overriden method from an interface in the child class
+        ClassForInterface classForInterface = new ClassForInterface();
+        classForInterface.abstractMethodFromInterfaceClass();
+        classForInterface.anotherAbstractMethodFromInterfaceClass();
 
     }
 }
