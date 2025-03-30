@@ -7,7 +7,7 @@ This repository contains code snippets, algorithms, and problem-solving exercise
 - **Data Structures**: Implementation and usage of various data structures.
 - **Algorithms**: Common algorithms and their applications.
 - **Coding Problems**: Solutions to popular coding challenges.
-- **System Design**: Notes and examples for system design concepts.
+- **Framework**: Examples for frameworks concepts.
 
 ## How to Use
 
