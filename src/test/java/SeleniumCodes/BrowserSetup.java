@@ -5,7 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class BrowserSetup {
-    WebDriver driver = null;
+    WebDriver driver;
 
 
     public void browserSetupWithChrome(String baseURL) {
