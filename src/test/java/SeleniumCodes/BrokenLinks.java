@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.net.HttpURLConnection;
+import java.net.URI;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -41,8 +42,8 @@ public class BrokenLinks {
 
     public static void linkVisit(String linkURL) {
         try {
-            URL url = new URL(linkURL);
-            HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+            URI url = new URI(linkURL);
+            HttpURLConnection httpURLConnection = (HttpURLConnection) url.toURL().openConnection();
             httpURLConnection.setConnectTimeout(5000);
             httpURLConnection.connect();
 

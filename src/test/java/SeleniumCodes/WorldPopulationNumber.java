@@ -68,6 +68,7 @@ public class WorldPopulationNumber extends BrowserSetup {
         while (x > 0) {
 
             for (String cssSelector : cssSelectors) {
+                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1000));
                 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
                 String currentText = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(cssSelector))).getText();
                 System.out.println(currentText);
