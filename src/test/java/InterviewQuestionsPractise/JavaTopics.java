@@ -26,9 +26,9 @@ public class JavaTopics {
     }
 
     public static void stringReverse(String providedString) {
-        String temporaryString = "";
+        StringBuilder temporaryString = new StringBuilder();
         for (int i = providedString.length() - 1; i >= 0; i--) {
-            temporaryString += providedString.charAt(i);
+            temporaryString.append(providedString.charAt(i));
         }
         System.out.println("Reversed String: " + temporaryString);
     }
