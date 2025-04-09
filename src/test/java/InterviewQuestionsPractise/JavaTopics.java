@@ -5,12 +5,13 @@ import java.util.Scanner;
 
 public class JavaTopics {
     public static void main(String[] args) {
-//        System.out.println("Main method with main");
-//        main("Main method without main");
-//        main(100);
-//        System.out.println(stringCompare("hello", "Hello"));
-//        stringReverse("Hello");
+        System.out.println("Main method with main");
+        main("Main method without main");
+        main(100);
+        System.out.println(stringCompare("hello", "Hello"));
+        stringReverse("Hello");
         matrixInput();
+        System.out.println(stringReverseWithStringBuilder("Ayush"));
     }
 
     public static void main(String string) {
@@ -69,6 +70,10 @@ public class JavaTopics {
             System.out.println();
         }
 
+    }
+
+    public static String stringReverseWithStringBuilder(String stringToBeReversed) {
+        return new StringBuilder(stringToBeReversed).reverse().toString().toLowerCase();
     }
 
 }
