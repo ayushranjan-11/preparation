@@ -1,17 +1,20 @@
 package InterviewQuestionsPractise;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
 
 public class JavaTopics {
     public static void main(String[] args) {
-        System.out.println("Main method with main");
-        main("Main method without main");
-        main(100);
-        System.out.println(stringCompare("hello", "Hello"));
-        stringReverse("Hello");
-        matrixInput();
-        System.out.println(stringReverseWithStringBuilder("Ayush"));
+//        System.out.println("Main method with main");
+//        main("Main method without main");
+//        main(100);
+//        System.out.println(stringCompare("hello", "Hello"));
+//        stringReverse("Hello");
+//        matrixInput();
+//        System.out.println(stringReverseWithStringBuilder("Ayush"));
+        listTesting();
     }
 
     public static void main(String string) {
@@ -74,6 +77,25 @@ public class JavaTopics {
 
     public static String stringReverseWithStringBuilder(String stringToBeReversed) {
         return new StringBuilder(stringToBeReversed).reverse().toString().toLowerCase();
+    }
+
+    public void nonStaticMethod(){
+        System.out.println("Non static method for this class");
+    }
+
+    public static void listTesting() {
+        List<Integer> integerList = new ArrayList<>();
+
+        //integerList.add(0,1);
+        int listInput = 0;
+
+        for(int i = 0; i < 10; i++) {
+            integerList.add(i,listInput++);
+        }
+
+        for (Integer integer : integerList) {
+            System.out.println(integer);
+        }
     }
 
 }
