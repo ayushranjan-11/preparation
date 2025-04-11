@@ -92,6 +92,7 @@ public class WorldPopulationNumber extends BrowserSetup {
             System.out.println(element.getText());
         }
 
+        //Taking screenshot functionality
         try {
             TakesScreenshot takesScreenshot = (TakesScreenshot) browserSetup.driver;
             File sourceFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
