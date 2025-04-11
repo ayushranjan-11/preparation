@@ -1,13 +1,20 @@
 package SeleniumCodes;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.devtools.v132.page.model.Screenshot;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.apache.commons.io.FileUtils;
 
 public class WorldPopulationNumber extends BrowserSetup {
     //    WebDriver driver = new ChromeDriver();
@@ -79,11 +86,24 @@ public class WorldPopulationNumber extends BrowserSetup {
 
     }
 
-    public void improvedVersionFromNaveenTutorials(String xpathForElement) {
+    public void improvedVersionFromNaveenTutorials(String xpathForElement){
         List<WebElement> elementsList = browserSetup.driver.findElements(By.xpath(xpathForElement));
         for (WebElement element : elementsList) {
             System.out.println(element.getText());
         }
 
+        try {
+            TakesScreenshot takesScreenshot = (TakesScreenshot) browserSetup.driver;
+            File sourceFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
+
+            File destinationFile = new File("src/test/Screenshots/screenshot.png");
+            FileUtils.copyFile(sourceFile, destinationFile);
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+//        finally {
+//            browserSetup.driver.quit();
+//        }
     }
 }
