@@ -21,6 +21,7 @@ public class ClassWithWebDriver {
         classWithWebDriver.pageVisit(visitURL);
         classWithWebDriver.takeScreenshotAsFull();
         classWithWebDriver.takeScreenshotAsPortion();
+        classWithWebDriver.takeScreenshotOfWebElement();
 
         //closing the driver
         classWithWebDriver.driverQuit();
@@ -55,6 +56,23 @@ public class ClassWithWebDriver {
         try {
             File sourceFile = webElement.getScreenshotAs(OutputType.FILE); //specify element directly for the source file
             File destinationFile = new File("src/test/Screenshots/screenshotFromDifferentClassOfPortion.png");
+
+            FileUtils.copyFile(sourceFile, destinationFile);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void takeScreenshotOfWebElement() {
+
+        //Taking screenshot of the logo present in the page
+        WebElement webElement = driver.findElement(By.xpath("//img[@alt='gamp-logo']"));
+        WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(1000));
+        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[normalize-space()='WELCOME TO GAMP']")));
+
+        try {
+            File sourceFile = webElement.getScreenshotAs(OutputType.FILE); //specify element directly for the source file
+            File destinationFile = new File("src/test/Screenshots/screenshotOfWebElement.png");
 
             FileUtils.copyFile(sourceFile, destinationFile);
         } catch (Exception e) {

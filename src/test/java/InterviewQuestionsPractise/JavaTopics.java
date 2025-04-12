@@ -12,7 +12,9 @@ public class JavaTopics {
 //        matrixInput();
 //        System.out.println(stringReverseWithStringBuilder("Ayush"));
 //        listTesting();
-        vowelCheck("Ayush Ranjan");
+//        vowelCheck("Ayush Ranjan");
+        stringReplace("1.1.1.1");
+        stringReplaceOptimized("1.1.1.1");
     }
 
     public static void main(String string) {
@@ -103,19 +105,56 @@ public class JavaTopics {
                     || stringToCheck.charAt(i) == 'o' || stringToCheck.charAt(i) == 'u') {
 
                 vowelkeeper.append(stringToCheck.charAt(i));
-                vowelCount.put(stringToCheck.charAt(i), vowelCount.get(stringToCheck.charAt(i))+1);
+                vowelCount.put(stringToCheck.charAt(i), vowelCount.get(stringToCheck.charAt(i)) + 1);
 
                 //TODO: Improve the duplicate addition of the characters
             }
         }
         System.out.println("Present vowels were: " + vowelkeeper);
-        for(Map.Entry<Character, Integer> e: vowelCount.entrySet()) {
+        for (Map.Entry<Character, Integer> e : vowelCount.entrySet()) {
             System.out.printf("  %c: %d%n", e.getKey(), e.getValue());
         }
         return vowelkeeper.toString();
     }
 
+    public static void stringReplace(String givenString) {
+        String checkText = ".", toAdd = "[.]";
+
+        List<String> stringIntoList = new ArrayList<>();
+
+        for (int i = 0; i < givenString.length(); i++) {
+            stringIntoList.add(String.valueOf(givenString.charAt(i)));
+        }
+        for (int j = 0; j< stringIntoList.size(); j++) {
+            if (stringIntoList.get(j).contains(checkText)) {
+                stringIntoList.remove(j);
+                stringIntoList.add(j,toAdd);
+            }
+        }
+        //System.out.println(givenString);
+        System.out.println(stringIntoList);
+
+        //To add list items into as string (i.e [1, [.], 1, [.], 1, [.], 1] -> 1[.]1[.]1[.]1)
+        StringBuilder builder = new StringBuilder();
+        for (String s: stringIntoList) {
+            builder.append(s);
+        }
+        System.out.println(builder);
+    }
+
+    public static String stringReplaceOptimized(String providedString) {
+        if (providedString == null) {
+            System.out.println("Please provide correct string to check");
+        }
+        else {
+            providedString.replace(".", "[.]");
+        }
+
+        return providedString;
+    }
+
     public void nonStaticMethod() {
         System.out.println("Non static method for this class");
     }
+
 }
