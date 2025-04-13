@@ -37,17 +37,17 @@ public class ActionClassLearning {
 //        actions.click(element).perform();
 //    }
 
-    public void mouseHoverAction(String inputFieldTextXpath, String firstResultXpath) throws InterruptedException {
+    public void mouseHoverAction(String inputFieldTextXpath, String firstResultXpath) {
 
         WebElement inputField = driver.findElement(By.cssSelector(inputFieldTextXpath));
         actions.sendKeys(inputField, "google").build().perform();
         driverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(firstResultXpath)));
         WebElement suggestionSelect = driver.findElement(By.xpath(firstResultXpath));
 
-        actions.moveToElement(suggestionSelect).build().perform();
+        Action action = actions.moveToElement(suggestionSelect).build();
+        action.perform();
 
         driverWait.until(ExpectedConditions.elementToBeClickable(suggestionSelect));
-//
         actions.click(suggestionSelect).build().perform();
     }
 }
