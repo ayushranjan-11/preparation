@@ -1,7 +1,5 @@
 package InterviewQuestionsPractise;
 
-import java.util.Arrays;
-
 public class ArrayProblem {
     public static void main(String[] args) {
         int[] array = {1, 34, 167, 143, 99, 10, 26, 999, 111};
