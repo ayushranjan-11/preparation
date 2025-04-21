@@ -1,8 +1,11 @@
 package SeleniumCodes;
 
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 
 import java.time.Duration;
 
@@ -12,6 +15,7 @@ public class LoginIntoPopUps {
     String authURL = "https://the-internet.herokuapp.com/basic_auth";
     String popUpUsernameAndPassword = "admin:admin@";
     WebDriver driver = new ChromeDriver();
+    Wait<WebDriver> wait = new FluentWait<>(driver).withTimeout(Duration.ofSeconds(30)).pollingEvery(Duration.ofSeconds(5)).ignoring(NoSuchElementException.class);
 
     public static void main(String[] args) {
         LoginIntoPopUps loginIntoPopUps = new LoginIntoPopUps();
@@ -40,12 +44,12 @@ public class LoginIntoPopUps {
         urls[0] += "//";
         urls[1] = popUpUsernameAndPassword + urls[1];
 
-        StringBuffer stringBuffer = new StringBuffer();
-        for (int i = 0; i < urls.length; i++) {
-            stringBuffer.append(urls[i]);
+        StringBuilder stringBuilder = new StringBuilder();
+        for (String url : urls) {
+            stringBuilder.append(url);
         }
 
-        driver.get(stringBuffer.toString());
+        driver.get(stringBuilder.toString());
 
     }
 
