@@ -21,6 +21,7 @@ public class SeleniumTopics extends BrowserSetup {
 		inputWithoutSendKeys.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		// inputWithoutSendKeys.provideInputToTheFields();
 		inputWithoutSendKeys.EnterKeyPress();
+		inputWithoutSendKeys.navigationPostUrlVisit();
 	}
 
 	@Override
@@ -55,5 +56,9 @@ public class SeleniumTopics extends BrowserSetup {
 			}
 		}
 		driver.findElement(By.xpath("//input[@class = 'btn btn-primary']")).sendKeys(Keys.ENTER);
+	}
+
+	void navigationPostUrlVisit() {
+		driver.navigate().back();
 	}
 }
