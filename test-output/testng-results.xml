@@ -2,19 +2,23 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-05-03T17:23:44 IST" name="Suite" finished-at="2025-05-03T17:24:24 IST" duration-ms="40222">
+  <suite started-at="2025-05-03T20:36:33 IST" name="Suite" finished-at="2025-05-03T20:36:38 IST" duration-ms="4484">
     <groups>
     </groups>
-    <test started-at="2025-05-03T17:23:44 IST" name="pomAndPageFactoryModel" finished-at="2025-05-03T17:24:24 IST" duration-ms="40222">
+    <test started-at="2025-05-03T20:36:33 IST" name="pomAndPageFactoryModel" finished-at="2025-05-03T20:36:38 IST" duration-ms="4484">
       <class name="pomAndPageFactory.LoginPagePageFactory">
-        <test-method is-config="true" signature="setup()[pri:0, instance:pomAndPageFactory.LoginPagePageFactory@6f36c2f0]" started-at="2025-05-03T17:23:44 IST" name="setup" finished-at="2025-05-03T17:23:45 IST" duration-ms="1001" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:pomAndPageFactory.LoginPagePageFactory@74e52ef6]" started-at="2025-05-03T20:36:33 IST" name="setup" finished-at="2025-05-03T20:36:34 IST" duration-ms="968" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="loginProcess()[pri:0, instance:pomAndPageFactory.LoginPagePageFactory@6f36c2f0]" started-at="2025-05-03T17:23:45 IST" name="loginProcess" finished-at="2025-05-03T17:24:24 IST" duration-ms="39199" status="PASS">
+        <test-method signature="loginProcess()[pri:0, instance:pomAndPageFactory.LoginPagePageFactory@74e52ef6]" started-at="2025-05-03T20:36:34 IST" name="loginProcess" finished-at="2025-05-03T20:36:37 IST" duration-ms="3248" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginProcess -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:pomAndPageFactory.LoginPagePageFactory@74e52ef6]" started-at="2025-05-03T20:36:37 IST" name="closeBrowser" finished-at="2025-05-03T20:36:38 IST" duration-ms="246" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
       </class> <!-- pomAndPageFactory.LoginPagePageFactory -->
     </test> <!-- pomAndPageFactoryModel -->
   </suite> <!-- Suite -->
