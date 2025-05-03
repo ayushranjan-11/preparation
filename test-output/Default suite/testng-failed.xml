@@ -3,11 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="SeleniumCodes.CarousalHandling">
+      <class name="pomAndPageFactory.LoginPagePageFactory">
         <methods>
-          <include name="getRecommendedSectionContentList"/>
+          <include name="loginProcess"/>
+          <include name="setup"/>
         </methods>
-      </class> <!-- SeleniumCodes.CarousalHandling -->
+      </class> <!-- pomAndPageFactory.LoginPagePageFactory -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

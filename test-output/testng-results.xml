@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="3" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-04-28T18:26:46 IST" name="Default suite" finished-at="2025-04-28T18:26:54 IST" duration-ms="7925">
+  <suite started-at="2025-05-03T17:23:44 IST" name="Suite" finished-at="2025-05-03T17:24:24 IST" duration-ms="40222">
     <groups>
     </groups>
-    <test started-at="2025-04-28T18:26:46 IST" name="Default test" finished-at="2025-04-28T18:26:54 IST" duration-ms="7925">
-      <class name="SeleniumCodes.CarousalHandling">
-        <test-method signature="BrowserOpenAndNavigation()[pri:1, instance:SeleniumCodes.CarousalHandling@3eb738bb]" started-at="2025-04-28T18:26:46 IST" name="BrowserOpenAndNavigation" finished-at="2025-04-28T18:26:49 IST" duration-ms="3055" status="PASS">
+    <test started-at="2025-05-03T17:23:44 IST" name="pomAndPageFactoryModel" finished-at="2025-05-03T17:24:24 IST" duration-ms="40222">
+      <class name="pomAndPageFactory.LoginPagePageFactory">
+        <test-method is-config="true" signature="setup()[pri:0, instance:pomAndPageFactory.LoginPagePageFactory@6f36c2f0]" started-at="2025-05-03T17:23:44 IST" name="setup" finished-at="2025-05-03T17:23:45 IST" duration-ms="1001" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- BrowserOpenAndNavigation -->
-        <test-method signature="getRecommendedSectionContentList()[pri:2, instance:SeleniumCodes.CarousalHandling@3eb738bb]" started-at="2025-04-28T18:26:49 IST" name="getRecommendedSectionContentList" finished-at="2025-04-28T18:26:54 IST" duration-ms="4843" status="PASS">
+        </test-method> <!-- setup -->
+        <test-method signature="loginProcess()[pri:0, instance:pomAndPageFactory.LoginPagePageFactory@6f36c2f0]" started-at="2025-05-03T17:23:45 IST" name="loginProcess" finished-at="2025-05-03T17:24:24 IST" duration-ms="39199" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getRecommendedSectionContentList -->
-      </class> <!-- SeleniumCodes.CarousalHandling -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- loginProcess -->
+      </class> <!-- pomAndPageFactory.LoginPagePageFactory -->
+    </test> <!-- pomAndPageFactoryModel -->
+  </suite> <!-- Suite -->
 </testng-results>
