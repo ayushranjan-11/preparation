@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="pomAndPageFactory.LoginPagePageFactory">
+      <class name="seleniumCodes.FileUpload">
         <methods>
-          <include name="loginProcess"/>
+          <include name="closeBrowser"/>
+          <include name="navigateAndImageUpload"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- pomAndPageFactory.LoginPagePageFactory -->
+      </class> <!-- seleniumCodes.FileUpload -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

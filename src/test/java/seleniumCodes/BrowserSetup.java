@@ -1,4 +1,4 @@
-package SeleniumCodes;
+package seleniumCodes;
 
 import java.time.Duration;
 import java.util.Set;

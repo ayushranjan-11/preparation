@@ -1,4 +1,4 @@
-package SeleniumCodes;
+package seleniumCodes;
 
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.chrome.ChromeDriver;

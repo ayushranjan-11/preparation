@@ -1,4 +1,4 @@
-package SeleniumCodes;
+package seleniumCodes;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;

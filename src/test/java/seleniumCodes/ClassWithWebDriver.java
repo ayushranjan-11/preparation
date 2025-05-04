@@ -1,4 +1,4 @@
-package SeleniumCodes;
+package seleniumCodes;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;

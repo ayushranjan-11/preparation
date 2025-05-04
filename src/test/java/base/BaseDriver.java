@@ -1,6 +1,5 @@
 package base;
 
-import java.io.FileNotFoundException;
 import java.time.Duration;
 import java.util.Properties;
 
@@ -17,7 +16,7 @@ public class BaseDriver {
 	// File("/preparation/src/test/resources/pomAndpageFactory.properties");
 	public Properties properties = new Properties();
 
-	public void setup() throws FileNotFoundException {
+	public void setup() {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		wait = new WebDriverWait(driver, Duration.ofSeconds(30));
