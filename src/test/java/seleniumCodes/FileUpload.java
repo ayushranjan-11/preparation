@@ -15,14 +15,6 @@ public class FileUpload extends BaseDriver {
 	FileInputStream fileInputStream;
 
 	// File upload with properties files
-//	@BeforeMethod
-//	@Override
-//	public void setup() {
-//		driver = new ChromeDriver();
-//		driver.manage().window().maximize();
-//		wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-//
-//	}
 
 	@Test
 	void navigateAndImageUpload() throws IOException, InterruptedException {
@@ -50,14 +42,6 @@ public class FileUpload extends BaseDriver {
 				+ driver.findElement(By.id(properties.getProperty("fileUploadedTextId"))).getText()); // Uploaded image
 																										// visible text
 																										// check
-	}
-
-	@AfterClass
-	@Override
-	public void closeBrowser() {
-		if (this.driver != null) {
-			driver.quit();
-		}
 	}
 
 }

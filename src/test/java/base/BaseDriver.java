@@ -6,7 +6,7 @@ import java.util.Properties;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterClass;
 
 public class BaseDriver {
 
@@ -22,9 +22,11 @@ public class BaseDriver {
 		driver.manage().window().maximize();
 		wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 	}
-	
-	//1. Moving the setup method on constructor, so that calling it again and again in each subclass can be eliminated
-	//2. Adding @BeforeMethod with setup method can achieve the same, if want to use testNG
+
+	// 1. Moving the setup method on constructor, so that calling it again and again
+	// in each subclass can be eliminated
+	// 2. Adding @BeforeMethod with setup method can achieve the same, if want to
+	// use testNG
 //	@BeforeMethod
 //	public void setup() {
 //		driver = new ChromeDriver();
@@ -32,6 +34,7 @@ public class BaseDriver {
 //		wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 //	}
 
+	@AfterClass
 	public void closeBrowser() {
 		if (this.driver != null) {
 			driver.quit();
