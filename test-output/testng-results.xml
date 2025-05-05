@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-05-04T20:03:23 IST" name="Default suite" finished-at="2025-05-04T20:03:33 IST" duration-ms="10460">
+  <suite started-at="2025-05-05T17:55:00 IST" name="Default suite" finished-at="2025-05-05T17:55:04 IST" duration-ms="4219">
     <groups>
     </groups>
-    <test started-at="2025-05-04T20:03:23 IST" name="Default test" finished-at="2025-05-04T20:03:33 IST" duration-ms="10460">
-      <class name="seleniumCodes.FileUpload">
-        <test-method signature="navigateAndImageUpload()[pri:0, instance:seleniumCodes.FileUpload@5dd1c9f2]" started-at="2025-05-04T20:03:23 IST" name="navigateAndImageUpload" finished-at="2025-05-04T20:03:33 IST" duration-ms="10353" status="PASS">
+    <test started-at="2025-05-05T17:55:00 IST" name="Default test" finished-at="2025-05-05T17:55:04 IST" duration-ms="4219">
+      <class name="seleniumCodes.FileDownload">
+        <test-method signature="settingCustomDownloadLocation()[pri:1, instance:seleniumCodes.FileDownload@65e98b1c]" started-at="2025-05-05T17:55:00 IST" name="settingCustomDownloadLocation" finished-at="2025-05-05T17:55:01 IST" duration-ms="999" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- navigateAndImageUpload -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:seleniumCodes.FileUpload@5dd1c9f2]" started-at="2025-05-04T20:03:33 IST" name="closeBrowser" finished-at="2025-05-04T20:03:33 IST" duration-ms="93" status="PASS">
+        </test-method> <!-- settingCustomDownloadLocation -->
+        <test-method signature="initateDownload()[pri:2, instance:seleniumCodes.FileDownload@65e98b1c]" started-at="2025-05-05T17:55:01 IST" name="initateDownload" finished-at="2025-05-05T17:55:04 IST" depends-on-methods="seleniumCodes.FileDownload.settingCustomDownloadLocation" duration-ms="3006" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initateDownload -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:seleniumCodes.FileDownload@65e98b1c]" started-at="2025-05-05T17:55:04 IST" name="closeBrowser" finished-at="2025-05-05T17:55:04 IST" duration-ms="177" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- seleniumCodes.FileUpload -->
+      </class> <!-- seleniumCodes.FileDownload -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
