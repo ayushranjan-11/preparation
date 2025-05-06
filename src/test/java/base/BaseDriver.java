@@ -3,6 +3,7 @@ package base;
 import java.time.Duration;
 import java.util.Properties;
 
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -28,6 +29,10 @@ public class BaseDriver {
 		driver = new ChromeDriver(chromeOptions);
 		driver.manage().window().maximize();
 		wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+	}
+
+	public void resizeBrowser(Dimension dimension) {
+		driver.manage().window().setSize(dimension);
 	}
 
 	// 1. Moving the setup method on constructor, so that calling it again and again

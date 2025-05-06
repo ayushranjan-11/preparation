@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="seleniumCodes.FileDownload">
+      <class name="seleniumCodes.BrowserActions">
         <methods>
-          <include name="initateDownload"/>
-          <include name="settingCustomDownloadLocation"/>
+          <include name="resizeBrowser"/>
+          <include name="closeBrowser"/>
         </methods>
-      </class> <!-- seleniumCodes.FileDownload -->
+      </class> <!-- seleniumCodes.BrowserActions -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
