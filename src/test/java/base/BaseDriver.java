@@ -1,5 +1,6 @@
 package base;
 
+import java.io.FileInputStream;
 import java.time.Duration;
 import java.util.Properties;
 
@@ -17,6 +18,7 @@ public class BaseDriver {
 	public String filePath = System.getProperty("user.dir") + "/src/test/resources/pomAndpageFactory.properties";
 	// public File file = new
 	// File("/preparation/src/test/resources/pomAndpageFactory.properties");
+	public FileInputStream fileInputStream;
 	public Properties properties = new Properties();
 
 	public BaseDriver() {

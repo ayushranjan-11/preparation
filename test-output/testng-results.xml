@@ -1,61 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-05-06T13:05:21 IST" name="Default suite" finished-at="2025-05-06T13:05:21 IST" duration-ms="101">
+  <suite started-at="2025-05-07T13:49:21 IST" name="Default suite" finished-at="2025-05-07T13:49:31 IST" duration-ms="9996">
     <groups>
     </groups>
-    <test started-at="2025-05-06T13:05:21 IST" name="Default test" finished-at="2025-05-06T13:05:21 IST" duration-ms="101">
-      <class name="seleniumCodes.BrowserActions">
-        <test-method signature="resizeBrowser(org.openqa.selenium.Dimension)[pri:0, instance:seleniumCodes.BrowserActions@17aad511]" started-at="2025-05-06T13:05:21 IST" name="resizeBrowser" finished-at="2025-05-06T13:05:21 IST" duration-ms="0" status="FAIL">
-          <exception class="org.testng.TestNGException">
-            <message>
-              <![CDATA[
-Parameter 'dimension' is required by @Test on method resizeBrowser but has not been marked @Optional or defined
-in /private/var/folders/c_/lwm6z62x3cx6fqj5xbklqz4h0000gn/T/testng-eclipse--1453012592/testng-customsuite.xml]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.testng.TestNGException: 
-Parameter 'dimension' is required by @Test on method resizeBrowser but has not been marked @Optional or defined
-in /private/var/folders/c_/lwm6z62x3cx6fqj5xbklqz4h0000gn/T/testng-eclipse--1453012592/testng-customsuite.xml
-at org.testng.internal.Parameters.createParams(Parameters.java:264)
-at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:352)
-at org.testng.internal.Parameters.createParameters(Parameters.java:690)
-at org.testng.internal.Parameters.handleParameters(Parameters.java:885)
-at org.testng.internal.Parameters.handleParameters(Parameters.java:734)
-at org.testng.internal.invokers.ParameterHandler.handleParameters(ParameterHandler.java:72)
-at org.testng.internal.invokers.ParameterHandler.createParameters(ParameterHandler.java:51)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:949)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.testng.TestNGException -->
+    <test started-at="2025-05-07T13:49:21 IST" name="Default test" finished-at="2025-05-07T13:49:31 IST" duration-ms="9996">
+      <class name="pomAndPageFactory.LoginPagePageFactory">
+        <test-method signature="FileInputStreamSetup()[pri:0, instance:pomAndPageFactory.LoginPagePageFactory@4612b856]" started-at="2025-05-07T13:49:21 IST" name="FileInputStreamSetup" finished-at="2025-05-07T13:49:21 IST" duration-ms="5" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- resizeBrowser -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:seleniumCodes.BrowserActions@17aad511]" started-at="2025-05-06T13:05:21 IST" name="closeBrowser" finished-at="2025-05-06T13:05:21 IST" duration-ms="88" status="PASS">
+        </test-method> <!-- FileInputStreamSetup -->
+        <test-method signature="loginProcess()[pri:1, instance:pomAndPageFactory.LoginPagePageFactory@4612b856]" started-at="2025-05-07T13:49:21 IST" name="loginProcess" finished-at="2025-05-07T13:49:31 IST" duration-ms="9880" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginProcess -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:pomAndPageFactory.LoginPagePageFactory@4612b856]" started-at="2025-05-07T13:49:31 IST" name="closeBrowser" finished-at="2025-05-07T13:49:31 IST" duration-ms="94" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- seleniumCodes.BrowserActions -->
+      </class> <!-- pomAndPageFactory.LoginPagePageFactory -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

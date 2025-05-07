@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 import base.BaseDriver;
 
 public class LoginPagePageFactory extends BaseDriver {
-	FileInputStream fileInputStream;
+
 	LoginPage loginPage;
 
 //	@BeforeMethod
