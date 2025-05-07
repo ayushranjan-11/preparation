@@ -30,8 +30,6 @@ public class FileDownload {
 
 	String downloadPath = downloadDir.toString();
 
-	// Download can be initiated on click or visit to the link
-
 	// BaseDriver baseDriver;
 	ChromeDriver driver;
 	WebDriverWait wait;
