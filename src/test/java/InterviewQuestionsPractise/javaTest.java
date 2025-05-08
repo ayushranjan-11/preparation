@@ -1,4 +1,4 @@
-package SeleniumWIthTestNG;
+package InterviewQuestionsPractise;
 
 import java.util.ArrayList;
 import java.util.List;
