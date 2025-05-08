@@ -30,7 +30,6 @@ public class javaTest {
 		if(givenArray[givenArray.length-1] != givenArray[givenArray.length-2]){
 			j.add(givenArray[givenArray.length-1]);
 		}
-
 		System.out.println(j);
 
 	}
