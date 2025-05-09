@@ -3,13 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="seleniumCodes.FileUpload">
+      <class name="seleniumCodes.BrowserActions">
         <methods>
+          <include name="resizeBrowser"/>
           <include name="closeBrowser"/>
-          <include name="navigateAndImageUpload"/>
-          <include name="setup"/>
         </methods>
-      </class> <!-- seleniumCodes.FileUpload -->
+      </class> <!-- seleniumCodes.BrowserActions -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
