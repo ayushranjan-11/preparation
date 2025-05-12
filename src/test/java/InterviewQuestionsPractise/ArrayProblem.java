@@ -1,10 +1,20 @@
 package InterviewQuestionsPractise;
 
+import java.util.Scanner;
+
 public class ArrayProblem {
 	public static void main(String[] args) {
 		int[] array = { 1, 34, 167, 143, 99, 10, 26, 999, 111 };
+		//Storing Arrays values directly. To do this:
+		/*
+		int [] oneDArray = {1,2,3,4,5}
+		* int[][] twoDArray = {{100, 200},
+		* 						{300, 400},
+		* 						{500, 600}}
+		* */
 		printArray(array);
 		findSmallestNumber(array);
+		twoDimensionalArray();
 	}
 
 	public static void printArray(int[] array) {
@@ -43,5 +53,32 @@ public class ArrayProblem {
 			}
 		}
 		System.out.println("Shortest number in an given aray is: " + temp);
+	}
+
+	static void twoDimensionalArray(){
+		//Defining array size and storing values dynamically in that array
+
+
+		int[][] twoDArray = new int[3][2]; //This means the array has 3 rows and 2 columns
+		System.out.println(twoDArray.length); //rows count
+		System.out.println(twoDArray[0].length); //column count
+
+		System.out.println("Provide input for array");
+		Scanner sc = new Scanner(System.in);
+		if(sc.hasNextInt()) {
+			for (int i = 0; i< twoDArray.length; i++) {
+				for (int j = 0; j< twoDArray[0].length; j++) {
+					twoDArray[i][j] = sc.nextInt();
+				}
+			}
+			sc.close();
+		}
+
+		for (int i = 0; i< twoDArray.length; i++) {
+			for (int j = 0; j < twoDArray[0].length; j++) {
+				System.out.print(twoDArray[i][j]+" ");
+			}
+			System.out.println();
+		}
 	}
 }

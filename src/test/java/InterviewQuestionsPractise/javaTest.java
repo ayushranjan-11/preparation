@@ -15,7 +15,8 @@ public class javaTest {
 		javaTest javaTest = new javaTest();
 		// javaTest.arrayArrange(passingArray);
 		// javaTest.arrayArrangeFromAI(passingArray);
-		javaTest.printArray(passingArray);
+		// javaTest.printArray(passingArray);
+		System.out.println(javaTest.findBiggest(1,20));
 	}
 
 	void arrayArrange(int[] givenArray) {
@@ -74,5 +75,24 @@ public class javaTest {
 
 		map.entrySet().removeIf(entry -> entry.getValue() > 2);
 		System.out.println(map);
+	}
+
+	int findBiggest(int a, int b) {
+		/*
+		 * Given number a and b, find the biggest between them if both a and b are in range between 10-20
+		 * else print / return 0
+		 * Ex: (19, 11) -> 19
+		 * (29,9) -> 0
+		 * (9,8) -> 0
+		 * (11, 21) -> 11
+		 */
+		if(b>a){
+			int temp = b;
+			b = a;
+			a = temp;
+		}
+		if(a>=10 && a<=20) return a;
+		if(b>=10 && b<=20) return b;
+		return 0;
 	}
 }
