@@ -14,12 +14,15 @@ public class ArrayProblem {
 		* */
 //		printArray(array);
 //		findSmallestNumber(array);
-		sumOfElementInAnArray(array);
+//		sumOfElementInAnArray(array);
 //		twoDimensionalArray();
-		differentTypesOfDataInAnArray();
+//		differentTypesOfDataInAnArray();
+//		arrayArrangeWithString();
+//		arraySorting(array);
+		arrayElementSearch(array, 10);
 	}
 
-	public static void printArray(int[] array) {
+	static void printArray(int[] array) {
 		// Printing numbers from array who is starting with 1
 		int[] occuranceCount = new int[array.length];
 		int rem = 0;
@@ -109,5 +112,64 @@ public class ArrayProblem {
 //		for(int obj = 0; obj<differentKindOfArray.length; obj++){
 //			System.out.println(differentKindOfArray[obj]);
 //		}
+	}
+
+	static void arrayArrangeWithString(){
+		Object[] arrayForIntAndString = {147,42,16,4,675,'a'};
+		int[] arrayForObj = new int[arrayForIntAndString.length];
+		for(int i = 0; i<arrayForIntAndString.length; i++) {
+			Object elem = arrayForIntAndString[i];
+
+			if (elem instanceof Character) {
+				// Cast to Character, get primitive char, then its ASCII code
+				char ch = (Character) elem;
+				arrayForObj[i] = (int) ch;  // ASCII of 'a' is 97
+			} else if (elem instanceof Number) {
+				// Covers Integer, Long, etc.
+				arrayForObj[i] = ((Number) elem).intValue();
+			} else {
+				throw new IllegalArgumentException(
+						"Unsupported element type: " + elem.getClass()
+				);
+			}
+		}
+		for (int i = 0; i < arrayForObj.length - 1; i++) {
+			if (arrayForObj[i] > arrayForObj[i + 1]) {
+				int temp = arrayForObj[i];
+				arrayForObj[i] = arrayForObj[i + 1];
+				arrayForObj[i + 1] = temp;
+			}
+		}
+
+        for (int i : arrayForObj) {
+            System.out.println(i);
+        }
+	}
+
+	static void arraySorting(int[] arrayToSort){
+		int j =0;
+		while(j< arrayToSort.length) {
+			for (int i = 0; i < arrayToSort.length - 1; i++) {
+				if (arrayToSort[i] > arrayToSort[i + 1]) {
+					int temp = arrayToSort[i + 1];
+					arrayToSort[i + 1] = arrayToSort[i];
+					arrayToSort[i] = temp;
+				}
+			}
+			j++;
+		}
+
+		for (int i: arrayToSort){
+			System.out.print(i+" ");
+		}
+	}
+
+	static void arrayElementSearch(int[] array, int toSearch){
+		for(int i = 0; i<array.length; i++){
+			if(array[i]==toSearch){
+				System.out.println("Element found in position: "+i);
+				break;
+			}
+		}
 	}
 }
