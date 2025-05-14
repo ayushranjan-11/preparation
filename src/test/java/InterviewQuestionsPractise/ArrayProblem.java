@@ -12,9 +12,10 @@ public class ArrayProblem {
 		* 						{300, 400},
 		* 						{500, 600}}
 		* */
-		printArray(array);
-		findSmallestNumber(array);
-		twoDimensionalArray();
+//		printArray(array);
+//		findSmallestNumber(array);
+//		twoDimensionalArray();
+		differentTypesOfDataInAnArray();
 	}
 
 	public static void printArray(int[] array) {
@@ -80,5 +81,24 @@ public class ArrayProblem {
 			}
 			System.out.println();
 		}
+	}
+
+	static void differentTypesOfDataInAnArray() {
+		/*This explains the way to store different data types in a single array
+		Same data types can be stored in an array like:
+		String[] stringArray = {"ABCD","EFGH","IJKL","LMOP"};
+		Now to store something like this:
+		{1, "ABCD", true, 12.25}
+		we will use Object class instead of any data types
+		Object[] differentKindOfArray = {1, "ABCD", true, 12.25};
+		**Object is the root class for all predefined java class**
+		 */
+		Object[] differentKindOfArray = {1, "ABCD", true, 12.25};
+		for(Object content : differentKindOfArray){
+			System.out.println(content);
+		}
+//		for(int obj = 0; obj<differentKindOfArray.length; obj++){
+//			System.out.println(differentKindOfArray[obj]);
+//		}
 	}
 }
