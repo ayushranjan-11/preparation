@@ -1,1 +1,18 @@
 /target/
+# ========================================
+# IDE / Editor folders to ignore
+# ========================================
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Eclipse
+.settings/
+.project
+.classpath
+.externalToolBuilders/
+.metadata/
+bin/
+
+# VS Code
+.vscode/
