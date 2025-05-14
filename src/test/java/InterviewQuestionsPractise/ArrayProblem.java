@@ -14,6 +14,7 @@ public class ArrayProblem {
 		* */
 //		printArray(array);
 //		findSmallestNumber(array);
+		sumOfElementInAnArray(array);
 //		twoDimensionalArray();
 		differentTypesOfDataInAnArray();
 	}
@@ -54,6 +55,14 @@ public class ArrayProblem {
 			}
 		}
 		System.out.println("Shortest number in an given aray is: " + temp);
+	}
+
+	static void sumOfElementInAnArray(int[] array){
+		int sumHold= 0;
+		for(int n: array){
+			sumHold+=n;
+		}
+		System.out.println(sumHold);
 	}
 
 	static void twoDimensionalArray(){
