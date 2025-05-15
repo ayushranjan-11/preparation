@@ -1,10 +1,12 @@
 package InterviewQuestionsPractise;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ArrayProblem {
 	public static void main(String[] args) {
 		int[] array = { 1, 34, 167, 143, 99, 10, 26, 999, 111 };
+		int [] arrayForCount = {10,20,30,60,50,60};
 		//Storing Arrays values directly. To do this:
 		/*
 		int [] oneDArray = {1,2,3,4,5}
@@ -18,8 +20,11 @@ public class ArrayProblem {
 //		twoDimensionalArray();
 //		differentTypesOfDataInAnArray();
 //		arrayArrangeWithString();
-//		arraySorting(array);
-		arrayElementSearch(array, 10);
+		arraySorting(array,"DESC"); //asc -> ascending order; desc -> decreasing order
+//		arrayElementSearch(array, 10);
+//		checkCount(arrayForCount);
+//		countOccurence(arrayForCount, 60);
+		arraysClassUsing(array);
 	}
 
 	static void printArray(int[] array) {
@@ -146,30 +151,117 @@ public class ArrayProblem {
         }
 	}
 
-	static void arraySorting(int[] arrayToSort){
-		int j =0;
-		while(j< arrayToSort.length) {
-			for (int i = 0; i < arrayToSort.length - 1; i++) {
-				if (arrayToSort[i] > arrayToSort[i + 1]) {
-					int temp = arrayToSort[i + 1];
-					arrayToSort[i + 1] = arrayToSort[i];
-					arrayToSort[i] = temp;
-				}
-			}
-			j++;
-		}
+	static void arraySorting(int[] arrayToSort, String typeOfSorting){
+		//Sorting of a given array in ascending and descending order
 
-		for (int i: arrayToSort){
-			System.out.print(i+" ");
+		int j = 0,k =0;
+		switch (typeOfSorting.toLowerCase()){
+			case "asc": {
+				while(j< arrayToSort.length) {
+					for (int i = 0; i < arrayToSort.length - 1; i++) {
+						if (arrayToSort[i] > arrayToSort[i + 1]) {
+							int temp = arrayToSort[i + 1];
+							arrayToSort[i + 1] = arrayToSort[i];
+							arrayToSort[i] = temp;
+						}
+					}
+					j++;
+				}
+
+				System.out.println("Array in ascending order");
+				for (int i: arrayToSort){
+					System.out.print(i+" ");
+				}
+				System.out.println();
+				break;
+			}
+			case "desc": {
+				while(k< arrayToSort.length) {
+					for (int i = 0; i < arrayToSort.length - 1; i++) {
+						if (arrayToSort[i] < arrayToSort[i + 1]) {
+							int temp = arrayToSort[i + 1];
+							arrayToSort[i + 1] = arrayToSort[i];
+							arrayToSort[i] = temp;
+						}
+					}
+					k++;
+				}
+
+				System.out.println("Array in descending order");
+				for (int i: arrayToSort){
+					System.out.print(i+" ");
+				}
+				break;
+			}
+			default:
+				System.out.println("Please check text. It should be either [asc] or [desc]");
 		}
+		System.out.println(); //Moving cursor to next line if this method is used along with other method
+//		while(j< arrayToSort.length) {
+//			for (int i = 0; i < arrayToSort.length - 1; i++) {
+//				if (arrayToSort[i] > arrayToSort[i + 1]) {
+//					int temp = arrayToSort[i + 1];
+//					arrayToSort[i + 1] = arrayToSort[i];
+//					arrayToSort[i] = temp;
+//				}
+//			}
+//			j++;
+//		}
+//
+//		System.out.println("Array in ascending order");
+//		for (int i: arrayToSort){
+//			System.out.print(i+" ");
+//		}
+//		System.out.println();
+//
+//		while(k< arrayToSort.length) {
+//			for (int i = 0; i < arrayToSort.length - 1; i++) {
+//				if (arrayToSort[i] < arrayToSort[i + 1]) {
+//					int temp = arrayToSort[i + 1];
+//					arrayToSort[i + 1] = arrayToSort[i];
+//					arrayToSort[i] = temp;
+//				}
+//			}
+//			k++;
+//		}
+//
+//		System.out.println("Array in descending order");
+//		for (int i: arrayToSort){
+//			System.out.print(i+" ");
+//		}
 	}
 
 	static void arrayElementSearch(int[] array, int toSearch){
 		for(int i = 0; i<array.length; i++){
 			if(array[i]==toSearch){
-				System.out.println("Element found in position: "+i);
+				System.out.println("Number " +toSearch+" found in position: "+i);
 				break;
 			}
 		}
+	}
+
+	static void checkCount(int[] array){
+		int countKeeper = 0;
+		for (int i = 0; i< array.length; i++){
+			for (int j = 0; j< array.length; j++){
+				if (array[i]==array[j]) countKeeper++;
+			}
+			System.out.println("Count for "+array[i]+" is "+countKeeper);
+			countKeeper=0;
+		}
+	}
+
+	static void countOccurence(int[] array, int numberForOccurence){
+		int count = 0;
+		for (int i: array){
+			if(i == numberForOccurence) count++;
+		}
+		System.out.println(numberForOccurence+" occured "+count+" times");
+	}
+
+	static void arraysClassUsing(int[] array){
+
+		Arrays.sort(array);
+		System.out.println(Arrays.toString(array));
 	}
 }
