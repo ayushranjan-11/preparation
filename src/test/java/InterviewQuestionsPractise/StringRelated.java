@@ -1,5 +1,7 @@
 package InterviewQuestionsPractise;
 
+import java.util.Arrays;
+
 public class StringRelated {
 
     public static void main(String[] args) {
@@ -10,6 +12,7 @@ public class StringRelated {
 //        System.out.println(equalsCheck("Welcome", "welcome"));
         System.out.println(replaceCheck("sun is sun and sun is for heat and also it is beautiful", 'a', "Suraj dada"));
         subStringCheck("String which is long");
+        splitCheck("$10_20_30_40_50");
     }
 
     static void everyNth(String str, int n) {
@@ -80,5 +83,10 @@ public class StringRelated {
 
         System.out.println(actionalableString.substring(2, 4));
         System.out.println(actionalableString.substring(1));
+    }
+
+    static void splitCheck(String stringToBeSplit){
+        String [] arrayOfString = stringToBeSplit.split("_",3);
+        System.out.println(Arrays.toString(arrayOfString));
     }
 }
