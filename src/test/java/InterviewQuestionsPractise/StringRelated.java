@@ -13,6 +13,7 @@ public class StringRelated {
         System.out.println(replaceCheck("sun is sun and sun is for heat and also it is beautiful", 'a', "Suraj dada"));
         subStringCheck("String which is long");
         splitCheck("$10_20_30_40_50");
+        System.out.println(replaceCheck("1.1.1.1"));
     }
 
     static void everyNth(String str, int n) {
@@ -76,17 +77,35 @@ public class StringRelated {
         //return stringForAction.replace('s',charToReplace);
         return stringForAction.replace("sun", stringForReplace);
         /* Works for character and character sequence
-        * */
+         * */
     }
 
-    static void subStringCheck(String actionalableString){
+    static void subStringCheck(String actionalableString) {
 
         System.out.println(actionalableString.substring(2, 4));
         System.out.println(actionalableString.substring(1));
     }
 
-    static void splitCheck(String stringToBeSplit){
-        String [] arrayOfString = stringToBeSplit.split("_",3);
-        System.out.println(Arrays.toString(arrayOfString));
+    static void splitCheck(String stringToBeSplit) {
+        String[] stringWithoutLimit = stringToBeSplit.split("_");
+        String[] arrayOfString = stringToBeSplit.split("_", 4);
+
+        for (String arrayString : stringToBeSplit.split("_", 4)) {
+            System.out.println(arrayString);
+            /*Output: $10
+            20
+            30_40_50
+
+             */
+        }
+        System.out.println(Arrays.toString(stringWithoutLimit));
+        System.out.println(Arrays.toString(arrayOfString)); //Output: [$10, 20, 30_40_50]
+
+        // *  %  ^  &  (  ) -> These cannot be used as regex for splitting string
+    }
+
+    static String replaceCheck(String stringToReplace){
+
+        return stringToReplace.replace(".","[.]");
     }
 }
