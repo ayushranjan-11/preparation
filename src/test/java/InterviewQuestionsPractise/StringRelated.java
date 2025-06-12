@@ -13,6 +13,7 @@ public class StringRelated {
         System.out.println(replaceCheck("sun is sun and sun is for heat and also it is beautiful", 'a', "Suraj dada"));
         subStringCheck("String which is long");
         splitCheck("$10_20_30_40_50");
+        stringBuffer("$10_20_30_40_50");
     }
 
     static void everyNth(String str, int n) {
@@ -88,5 +89,11 @@ public class StringRelated {
     static void splitCheck(String stringToBeSplit){
         String [] arrayOfString = stringToBeSplit.split("_",3);
         System.out.println(Arrays.toString(arrayOfString));
+    }
+
+    static void stringBuffer(String experimenatalString){
+        StringBuffer stringBuffer = new StringBuffer(experimenatalString);
+        stringBuffer.reverse();
+        System.out.println(stringBuffer);
     }
 }
