@@ -14,7 +14,8 @@ public class StringRelated {
         subStringCheck("String which is long");
 //        splitCheck("$10_20_30_40_50");
 //        System.out.println(replaceCheck("1.1.1.1"));
-        makeOutWord("abyz", "YAY");
+//        makeOutWord("abyz", "YAY");
+        makeOutWord("[[]]", "word");
     }
 
     static void everyNth(String str, int n) {
