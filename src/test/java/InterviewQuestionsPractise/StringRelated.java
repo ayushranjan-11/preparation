@@ -10,10 +10,11 @@ public class StringRelated {
 //        System.out.println(max1020(11, 21));
 //        System.out.println(containsCheck("Welcome", "cme"));
 //        System.out.println(equalsCheck("Welcome", "welcome"));
-        System.out.println(replaceCheck("sun is sun and sun is for heat and also it is beautiful", 'a', "Suraj dada"));
+//        System.out.println(replaceCheck("sun is sun and sun is for heat and also it is beautiful", 'a', "Suraj dada"));
         subStringCheck("String which is long");
-        splitCheck("$10_20_30_40_50");
-        stringBuffer("$10_20_30_40_50");
+//        splitCheck("$10_20_30_40_50");
+//        System.out.println(replaceCheck("1.1.1.1"));
+        makeOutWord("abyz", "YAY");
     }
 
     static void everyNth(String str, int n) {
@@ -77,23 +78,57 @@ public class StringRelated {
         //return stringForAction.replace('s',charToReplace);
         return stringForAction.replace("sun", stringForReplace);
         /* Works for character and character sequence
-        * */
+         * */
     }
 
-    static void subStringCheck(String actionalableString){
+    static void subStringCheck(String actionalableString) {
 
         System.out.println(actionalableString.substring(2, 4));
         System.out.println(actionalableString.substring(1));
     }
 
-    static void splitCheck(String stringToBeSplit){
-        String [] arrayOfString = stringToBeSplit.split("_",3);
-        System.out.println(Arrays.toString(arrayOfString));
+    static void splitCheck(String stringToBeSplit) {
+        String[] stringWithoutLimit = stringToBeSplit.split("_");
+        String[] arrayOfString = stringToBeSplit.split("_", 4);
+
+        for (String arrayString : stringToBeSplit.split("_", 4)) {
+            System.out.println(arrayString);
+            /*Output: $10
+            20
+            30_40_50
+
+             */
+        }
+        System.out.println(Arrays.toString(stringWithoutLimit));
+        System.out.println(Arrays.toString(arrayOfString)); //Output: [$10, 20, 30_40_50]
+
+        // *  %  ^  &  (  ) -> These cannot be used as regex for splitting string
     }
 
-    static void stringBuffer(String experimenatalString){
-        StringBuffer stringBuffer = new StringBuffer(experimenatalString);
-        stringBuffer.reverse();
-        System.out.println(stringBuffer);
+    static String replaceCheck(String stringToReplace) {
+
+        return stringToReplace.replace(".", "[.]");
+    }
+
+    static void makeOutWord(String pattern, String word) {
+        /*Given an "out" string length 4, such as "<<>>", and a word, return a new string where the word is in the middle
+        of the out string, e.g. "<<word>>". Note: use str.substring(i, j) to extract the String starting at index i and
+        going up to but not including index j.
+
+        makeOutWord("<<>>", "Yay") → "<<Yay>>"
+        makeOutWord("<<>>", "WooHoo") → "<<WooHoo>>"
+        makeOutWord("[[]]", "word") → "[[word]]"
+        * */
+        if (pattern.length() % 2 != 0) {
+            System.out.println("Pattern should be in group");
+        } else {
+
+            String toReplaceItem = pattern.substring((pattern.length() / 2)-1, (pattern.length() /2)+1);
+            String withReplaceItem = pattern.charAt((pattern.length() /2)-1)+word+pattern.charAt((pattern.length() /2));
+
+            pattern = pattern.replace(toReplaceItem,withReplaceItem);
+            System.out.println(toReplaceItem);
+            System.out.println(pattern);
+        }
     }
 }
