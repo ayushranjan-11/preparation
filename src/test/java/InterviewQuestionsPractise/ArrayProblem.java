@@ -20,7 +20,7 @@ public class ArrayProblem {
 //		twoDimensionalArray();
 //		differentTypesOfDataInAnArray();
 //		arrayArrangeWithString();
-		arraySorting(array,"DESC"); //asc -> ascending order; desc -> decreasing order
+//		arraySorting(array,"DESC"); //asc -> ascending order; desc -> decreasing order
 //		arrayElementSearch(array, 10);
 //		checkCount(arrayForCount);
 //		countOccurence(arrayForCount, 60);
@@ -262,8 +262,8 @@ public class ArrayProblem {
 	static void arraysClassUsing(int[] array){
 
 		Arrays.sort(array);
-		System.out.println(Arrays.toString(array));
+		System.out.println(array); //Output: [I@6e8cf4c6 -> Not able to print arrays
+		System.out.println(Arrays.toString(array)); //Output: [1, 10, 26, 34, 99, 111, 143, 167, 999]
 	}
-
 
 }
