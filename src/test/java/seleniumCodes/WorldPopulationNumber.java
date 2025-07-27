@@ -11,6 +11,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +22,9 @@ public class WorldPopulationNumber extends BrowserSetup {
     //    WebDriver driver = new ChromeDriver();
     static BrowserSetup browserSetup = new BrowserSetup();
     static String baseUrl = "https://www.worldometers.info/world-population/";
+    LocalDateTime localDateTime = LocalDateTime.now();
+    DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd:HH:mm");
+    String formattedTime = localDateTime.format(dateTimeFormatter);
 
     public static void main(String[] args) {
         //BrowserSetup browserSetup = new BrowserSetup();
@@ -97,7 +102,7 @@ public class WorldPopulationNumber extends BrowserSetup {
             TakesScreenshot takesScreenshot = (TakesScreenshot) browserSetup.driver;
             File sourceFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
 
-            File destinationFile = new File("src/test/Screenshots/screenshot.png");
+            File destinationFile = new File("src/test/Screenshots/screenshot"+formattedTime+".png");
             FileUtils.copyFile(sourceFile, destinationFile);
 
         } catch (Exception e) {
