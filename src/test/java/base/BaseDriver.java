@@ -11,7 +11,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 
-public class BaseDriver {
+public class  BaseDriver {
 
 	public WebDriver driver;
 	public WebDriverWait wait;

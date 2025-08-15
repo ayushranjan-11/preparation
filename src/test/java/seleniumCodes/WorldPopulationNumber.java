@@ -19,25 +19,19 @@ import java.util.List;
 import org.apache.commons.io.FileUtils;
 
 public class WorldPopulationNumber extends BrowserSetup {
-    //    WebDriver driver = new ChromeDriver();
     static BrowserSetup browserSetup = new BrowserSetup();
     static String baseUrl = "https://www.worldometers.info/world-population/";
     LocalDateTime localDateTime = LocalDateTime.now();
-    DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd:HH:mm");
-    String formattedTime = localDateTime.format(dateTimeFormatter);
+    DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd_HH-mm-ss");
+    String fileNameWithPath = "src/test/Screenshots/screenshot" + localDateTime.format(dateTimeFormatter) + ".png";
 
     public static void main(String[] args) {
-        //BrowserSetup browserSetup = new BrowserSetup();
         browserSetup.browserSetupWithChrome(baseUrl);
 
         WorldPopulationNumber worldPopulationNumber = new WorldPopulationNumber();
-        //worldPopulationNumber.browserLaunch(baseUrl);
-        //       worldPopulationNumber.getCountingFromWebPage();
 
-        String currentWorldPopulationXpath = "//div[@class='font-bold text-4xl md:text-6xl text-center text-zinc-500']" +
-                "/span[@class='rts-counter']";
-        String combinedXpathForTodayAndThisYear = "//div[normalize-space(text())='Today' or normalize-space(text())='This Year']" +
-                "//parent::div//span[@class='rts-counter text-2xl font-bold']";
+        String currentWorldPopulationXpath = "//div[@class='font-bold text-4xl md:text-6xl text-center text-zinc-500']" + "/span[@class='rts-counter']";
+        String combinedXpathForTodayAndThisYear = "//div[normalize-space(text())='Today' or normalize-space(text())='This Year']" + "//parent::div//span[@class='rts-counter text-2xl font-bold']";
 
         int x = 1;
         while (x < 20) {
@@ -48,13 +42,9 @@ public class WorldPopulationNumber extends BrowserSetup {
             x++;
         }
 
-
+        System.out.println("Screenshot available: " + worldPopulationNumber.takenScreenshotValidation());
     }
 
-//    public void browserLaunch(String baseUrl) {
-//        driver.get(baseUrl);
-//        //driver.manage().window().maximize();
-//    }
 
     public void getCountingFromWebPage() {
         String worldPopulationCssSelector = "div.font-bold > span:nth-child(1)";
@@ -91,8 +81,9 @@ public class WorldPopulationNumber extends BrowserSetup {
 
     }
 
-    public void improvedVersionFromNaveenTutorials(String xpathForElement){
+    public void improvedVersionFromNaveenTutorials(String xpathForElement) {
         List<WebElement> elementsList = browserSetup.driver.findElements(By.xpath(xpathForElement));
+
         for (WebElement element : elementsList) {
             System.out.println(element.getText());
         }
@@ -102,14 +93,18 @@ public class WorldPopulationNumber extends BrowserSetup {
             TakesScreenshot takesScreenshot = (TakesScreenshot) browserSetup.driver;
             File sourceFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
 
-            File destinationFile = new File("src/test/Screenshots/screenshot"+formattedTime+".png");
+
+            File destinationFile = new File(fileNameWithPath);
             FileUtils.copyFile(sourceFile, destinationFile);
 
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-//        finally {
-//            browserSetup.driver.quit();
-//        }
+
+    }
+
+    public boolean takenScreenshotValidation() {
+        File savedScreenshotValidation = new File(fileNameWithPath);
+        return savedScreenshotValidation.exists();
     }
 }
