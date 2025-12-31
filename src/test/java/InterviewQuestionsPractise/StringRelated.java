@@ -11,11 +11,12 @@ public class StringRelated {
 //        System.out.println(containsCheck("Welcome", "cme"));
 //        System.out.println(equalsCheck("Welcome", "welcome"));
 //        System.out.println(replaceCheck("sun is sun and sun is for heat and also it is beautiful", 'a', "Suraj dada"));
-        subStringCheck("String which is long");
+//        subStringCheck("String which is long");
 //        splitCheck("$10_20_30_40_50");
 //        System.out.println(replaceCheck("1.1.1.1"));
 //        makeOutWord("abyz", "YAY");
-        makeOutWord("[[]]", "word");
+//        makeOutWord("[[]]", "word");
+        smartStringAnalyzer(null);
     }
 
     static void everyNth(String str, int n) {
@@ -131,5 +132,32 @@ public class StringRelated {
             System.out.println(toReplaceItem);
             System.out.println(pattern);
         }
+    }
+
+    static void smartStringAnalyzer(String toBeAnalyzed){
+        
+        int i;
+        int vowelsCount = 0, consonantCount = 0, specialCharacterCount = 0, digitCount = 0;
+        if(toBeAnalyzed!= null && !toBeAnalyzed.isEmpty()){
+            toBeAnalyzed = toBeAnalyzed.toLowerCase();
+            for(i = 0;i<toBeAnalyzed.length();i++){
+                char singleCharacter = toBeAnalyzed.charAt(i);
+                String characterToString = String.valueOf(singleCharacter);
+                if(singleCharacter == 'a' || singleCharacter =='e'|| singleCharacter =='i'|| singleCharacter =='o'|| singleCharacter =='u'){
+                    vowelsCount++;
+                }
+                else if(singleCharacter >= 'a' && singleCharacter<='z' && singleCharacter != 'a' && singleCharacter != 'e' && singleCharacter != 'i' && singleCharacter != 'o' && singleCharacter != 'u'){
+                    consonantCount++;
+                } else if(characterToString.matches("[0-9]")){
+                    digitCount++;
+                }
+                else specialCharacterCount++;
+            }
+        } else System.out.println("Given string is either empty or null");
+
+        System.out.println("Total vowels count: "+vowelsCount);
+        System.out.println("Total consonant count: "+consonantCount);
+        System.out.println("Total Digit count: "+digitCount);
+        System.out.println("Total special characters count: "+specialCharacterCount);
     }
 }
