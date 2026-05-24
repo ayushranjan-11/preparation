@@ -16,7 +16,11 @@ public class javaTest {
 		// javaTest.arrayArrange(passingArray);
 		// javaTest.arrayArrangeFromAI(passingArray);
 		// javaTest.printArray(passingArray);
-		System.out.println(javaTest.findBiggest(1,20));
+		// System.out.println(javaTest.findBiggest(1,20));
+		// checkDoWhile(1);
+		// typeConversion();
+		// postAndPreIncrement();
+		terneryOperator();
 	}
 
 	void arrayArrange(int[] givenArray) {
@@ -95,4 +99,38 @@ public class javaTest {
 		if(b>=10 && b<=20) return b;
 		return 0;
 	}
+
+	public static void checkDoWhile(int doWhileLimit){
+
+		do{
+			System.out.println(doWhileLimit);
+			doWhileLimit++;
+		} while (doWhileLimit<=10);
+	}
+
+	public static void typeConversion(){
+		//Converting int to byte, which is bigger in range that byte
+		int a = 352;
+		byte b = (byte)a; //If the number is out of range then calculation is = Given number % range of the converting type (range for byte is -128 to 127 = 256 {width of the range})
+
+		System.out.println("The conversion of "+a+" from int to byte is: "+b);
+	}
+
+	public static void postAndPreIncrement(){
+		int a = 10; //Using this for post increment
+		int b = a++;
+		System.out.println(b); //Output: 10
+
+		int c = 10; //Using this for pre increment
+		int d = ++b;
+		System.out.println(d); //Output: 11
+	}
+
+	//Ternery operator
+
+	public static void terneryOperator(){
+		int a =10, b=20;
+		System.out.println((a>b) ? a++: (b%2==0) ? "even": "odd");
+	}
+
 }
