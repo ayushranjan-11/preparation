@@ -25,7 +25,8 @@ public class javaTest {
 		// turnNumberToBinary(72);
 		// fibonacciAdd(5,0,1);
 		// checkInputType();
-		checkInputTypeFromAI();
+		// checkInputTypeFromAI();
+		endOfFileCheck();
 	}
 
 	void arrayArrange(int[] givenArray) {
@@ -273,4 +274,22 @@ public class javaTest {
     scanner.close();
 	}
 
+	public static void endOfFileCheck(){
+
+		//Taking input os the strings
+		Scanner scanner = new Scanner(System.in);
+		int currentLineCount = 0;
+
+		while(scanner.hasNextLine()){
+			currentLineCount++;
+			String currentLine = scanner.nextLine();
+			if(!currentLine.contains(" end-of-file.")){
+				System.out.println(currentLineCount+". "+currentLine);
+			} else {
+				System.out.println(currentLineCount+". "+currentLine);
+				break;
+			}
+		}
+		scanner.close();
+	}
 }
