@@ -26,7 +26,8 @@ public class javaTest {
 		// fibonacciAdd(5,0,1);
 		// checkInputType();
 		// checkInputTypeFromAI();
-		endOfFileCheck();
+		//endOfFileCheck();
+		parallelogramArea();
 	}
 
 	void arrayArrange(int[] givenArray) {
@@ -291,5 +292,37 @@ public class javaTest {
 			}
 		}
 		scanner.close();
+	}
+
+	public static void parallelogramArea(){
+		// The constraint is that the input of Breadth and height should be 0 and greater but equal or less than 100
+		// Take 2 input, for breadth and height
+		int area = 1;
+		Scanner scanner = new Scanner(System.in);
+		ArrayList<Integer> inputArray = new ArrayList<>();
+
+		for(int i = 0;i < 2; i++){
+			if(scanner.hasNextInt()) {
+				inputArray.add(scanner.nextInt());
+				if(inputArray.get(i) > 0) {
+					area = area * inputArray.get(i);
+				} else  {
+					System.out.println("java.lang.Exception: Breadth and height must be positive");
+					area = 0;
+					break;
+				}
+			}
+		}
+		scanner.close();
+
+		//This is for java 21 and above,
+		if(area > inputArray.getFirst() && area > 0){
+			System.out.println(area);
+		}
+
+		//If java version is < 21
+//		if(area > inputArray.get(0) && area > 0){
+//			System.out.println(area);
+//		}
 	}
 }
